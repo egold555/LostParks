@@ -1,11 +1,18 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            About
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+
+    <ion-list>
+        <h1>HighScores</h1>
+        <ion-item text-wrap *ngFor="let element of highscores">
+            <p>{{element.name}} ({{element.score}})</p>
+        </ion-item>
+    </ion-list>
 
 </ion-content>

@@ -1,17 +1,31 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Scanner
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+    <h1>
+        <button ion-button color="dark" full round (click)="scan()">Start Scan</button>
+    </h1>
+
+    <ion-card *ngIf="productFound">
+        <ion-card-header>
+            <h2>Name: {{selectedProduct.name}}</h2>
+        </ion-card-header>
+        <ion-card-content>
+            <ol>
+                <li>ScanID: {{selectedProduct.scanid}}</li>
+                <li>Desc: {{selectedProduct.desc}}</li>
+                <li>Img: {{selectedProduct.img}}</li>
+                <li>Park: {{selectedPark.name}}</li>
+            <ul>
+                <li>Index: {{selectedPark.index}}</li>
+                <li>Loc: {{selectedPark.loc}}</li>
+            </ul>
+                </ol>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
