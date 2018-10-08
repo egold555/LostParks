@@ -1,3 +1,77 @@
 page-contact {
 
 }
+
+
+.contact img {
+	width: 100%;
+	display: block;
+}
+.contact .item img {
+	visibility: hidden;
+}
+
+.contact .container {
+	margin: 3rem auto;
+	padding: 1rem 0 2.4rem;
+	text-align: center;
+}
+.contact .container::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.contact .item {
+	width: 9rem;
+	height: 9rem;
+	position: relative;
+	display: inline-block;
+	margin: 0.5rem;
+}
+.contact .item::before { /* Goldenrod outline on the hexagon */
+	content: "";
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+	background-color: goldenrod;
+	clip-path: polygon(50% 0, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+	transform: scale(1.077);
+	transition: transform 0.3s;
+}
+.contact .item:hover::before {
+	transform: scale(1.154);
+}
+.contact .item A {
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+/* 	background-image: See JS. */
+	background-size: cover;
+	background-position: center;
+	clip-path: polygon(50% 0, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+}
+
+@media (min-width: 17rem) {
+	.contact .item {
+		display: block;
+		float: left;
+		margin: 0; /* reset */
+		margin-bottom: -1.4rem;	/* shifting up the items in the next row */
+	}
+}
+
+@media (min-width: 15rem) and (max-width: 49.999rem) {
+	.contact .container {
+		max-width: 40rem;
+	}
+	.contact .item:nth-child(7n+5) {
+		margin-left: 5rem;
+	}
+}
+
+@media (min-width: 50rem) {
+	.contact .container {
+		max-width: 50rem;
+	}
+	.contact .item:nth-child(9n+6) {
+		margin-left: 5rem;
+	}
+}

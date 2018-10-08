@@ -8,7 +8,16 @@ import { NavController } from 'ionic-angular';
 export class ContactPage {
 
   constructor(public navCtrl: NavController) {
+    
+  }
 
+  ionViewDidLoad() {
+    var list = document.querySelectorAll(".item a");
+
+    for (var i = 0; i < list.length; i++) {
+      var url = list[i].children[0].getAttribute("src");
+      (<any>list[i]).style.backgroundImage="url('" + url + "')";
+    }
   }
 
 }
